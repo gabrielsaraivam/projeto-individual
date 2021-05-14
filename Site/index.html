@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<link rel="stylesheet" href="./soccer-styles.css">
+    <link rel="stylesheet" href="./style.css">
+
+<body>
+
+    <div class="forma">
+        <img src="./img/Camada 2.png" alt="">
+    </div>
+
+    <section id="topo" class="container">
+
+        <div class="header"> 
+
+            <nav id="menu">
+                <ul onclick="check()">
+                    <li><a href="">Home</a></li>
+                    <li><a href="#sobre">Sobre</a></li>
+                    <li><a href="">Cadastre-se</a></li>
+                    <li><a href="">Contato</a></li>
+                </ul>
+            </nav>
+
+            <div class="menu-burguer">
+                <input type="checkbox" id="checkbox_menu">
+                <label for="checkbox_menu" class="check-orange" id="label-check">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </label>
+            </div>
+
+            <h2>Sócio Rei</h2>
+
+        </div>
+
+        <div class="infos">
+
+            <h1>Apoie o seu <br> 
+                time do coração!! </h1>
+
+            <span>Confira a escalação, estatística, gols, partidas e notícias do seu time, <br>
+                se inscreva e não perca um lance.
+            </span>
+
+            <br>
+
+            <button>Se inscreva!</button>
+
+        </div>
+
+        <div class="imagens">
+
+            <img src="./img/Missed chances-pana la.png" alt="">
+
+        </div>
+        
+    </section>
+
+    <section id="sobre" class="container">
+
+        <div class="imagem_sobre">
+            <img src="./img/Soccer-pana.png" alt="">
+        </div>
+
+        
+
+        <div class="text_sobre">
+            <h1>Quem <br>
+                 somos?</h1><br>
+            <span>Somos uma empresa que conecta o torcedor <br></span>
+                <span>    ao seu time do coração, a final o que seria dos<br></span>
+                    <span>clubes sem seus maiores apoiadores. <br></span>
+                        <span>Venha ser Sócio Rei!! <a href="">Conheça todos os beneficios</a> </span>
+        </div>
+
+    </section>
+
+    <section id="contato" class="container">
+        
+
+
+    </section>
+
+    <!-- <a href="https://storyset.com/sport">Illustration by Freepik Storyset</a> -->
+</body>
+</html>
+
+<script>
+    
+    var checkboxmenu = document.getElementById("checkbox_menu");
+    document.getElementById("checkbox_menu").onclick = function () {
+        
+    if (checkboxmenu.checked) {
+        menu.style = "display: block"
+    } else {
+        menu.style = "display: none"
+    }
+}
+
+function check (){
+    
+    checkboxmenu.checked = false;
+    menu.style = "display: none"
+}
+
+</script>
