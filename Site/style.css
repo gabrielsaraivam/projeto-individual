@@ -17,7 +17,7 @@ ul{
 
 .container{
     width: 80%;
-    height: 100%;
+    
     margin: auto;
     /* background-color: aqua; */
     position: relative;
@@ -166,34 +166,28 @@ ul{
     margin-bottom: 25%;
 }
 
-#sobre{
-    margin-bottom: 25%;
-}
 
 .imagem_sobre{
-    float: left;
+    /* float: left; */
     width: 50%;
+    position: relative;
 }
 
-.imagem_sobre img{
-    width: 90%;
-}
-
-.imagem_sobre img:hover{
-    width: 95%;
-}
 
 .text_sobre{
-    float: right;
+    
+    position: absolute;
+    right: 0;
+    top: 15%;
     width: 50%;
-    margin-top: 0;
-    margin-top: 9%;
+    
+
     /* background-color: blueviolet; */
 }
 
-.text_sobre h1, .text_sobre span, .text_sobre a{
+/* .text_sobre h1, .text_sobre span, .text_sobre a{
     padding-left: 10%;
-}
+} */
 
 .text_sobre h1{
     font-size: 50px;
@@ -202,6 +196,69 @@ ul{
 .text_sobre span{
     font-size: 20px;
 }
+
+.imagem_sobre img{
+    width: 70%;
+
+}
+
+.imagem_contato{
+    position: absolute;
+    right: 0;
+    width: 50%;
+    top: 0;
+    /* float: right; */
+    
+}
+
+.imagem_contato img{
+    width: 100%;
+}
+
+.box-item {
+    float: left;
+    width: 50%;
+    text-align: center;
+    margin-bottom: 5%;
+    
+}
+
+.text_contato{
+    width: 50%;
+    /* float: left; */
+    position: relative;
+    margin-top: 20%;
+    padding-top: 8%;
+
+}
+
+.text_contato img{
+    width: 40%;
+}
+
+#contato{
+    margin-bottom: 35%;
+}
+
+
+footer{
+    padding-top: 1.5%;
+    padding-bottom: 1.5%;
+    background-color: black;
+}
+
+footer img{
+    width: 10%;
+}
+
+footer a{
+    padding-top: 0.5%;
+    color: #ff7400;
+    float: right;
+}
+
+
+
 
 
 @media screen and (max-width: 768px){
