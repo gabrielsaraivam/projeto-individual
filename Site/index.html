@@ -7,63 +7,65 @@
     <title>Document</title>
 </head>
 
-<link rel="stylesheet" href="./soccer-styles.css">
+
     <link rel="stylesheet" href="./style.css">
 
+    <!-- <script src="https://code.jquery.com/jquery-1.11.0.min.js"></script> -->
+
 <body>
+    
+        <div class="forma">
+            <img src="./img/Camada 2.png" alt="">
+        </div>
 
-    <div class="forma">
-        <img src="./img/Camada 2.png" alt="">
-    </div>
+        <section id="topo" class="container">
 
-    <section id="topo" class="container">
+            <div class="header"> 
 
-        <div class="header"> 
+                <nav id="menu">
+                    <ul onclick="check()">
+                        <li><a href="#sobre">Sobre</a></li>
+                        <li><a href="">Cadastre-se</a></li>
+                        <li><label for="checkbox_entrar">Entrar</label> <input type="checkbox" id="checkbox_entrar"> </li>
+                        <li><a href="#contato">Contato</a></li>
+                    </ul>
+                </nav>
 
-            <nav id="menu">
-                <ul onclick="check()">
-                    <li><a href="">Home</a></li>
-                    <li><a href="#sobre">Sobre</a></li>
-                    <li><a href="#ta">Cadastre-se</a></li>
-                    <li><a href="#contato">Contato</a></li>
-                </ul>
-            </nav>
+                <div class="menu-burguer">
+                    <input type="checkbox" id="checkbox_menu">
+                    <label for="checkbox_menu" class="check-orange" id="label-check">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </label>
+                </div>
 
-            <div class="menu-burguer">
-                <input type="checkbox" id="checkbox_menu">
-                <label for="checkbox_menu" class="check-orange" id="label-check">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </label>
+                <h2>Sócio Rei</h2>
+
             </div>
 
-            <h2>Sócio Rei</h2>
+            <div class="infos">
 
-        </div>
+                <h1>Apoie o seu <br> 
+                    time do coração!! </h1>
 
-        <div class="infos">
+                <span>Confira a escalação, estatística, gols, partidas e notícias do seu time, <br>
+                    se inscreva e não perca um lance.
+                </span>
 
-            <h1>Apoie o seu <br> 
-                time do coração!! </h1>
+                <br>
 
-            <span>Confira a escalação, estatística, gols, partidas e notícias do seu time, <br>
-                se inscreva e não perca um lance.
-            </span>
+                <button>Se inscreva!</button>
 
-            <br>
+            </div>
 
-            <button>Se inscreva!</button>
+            <div class="imagens">
 
-        </div>
+                <img src="./img/Missed chances-pana la.png" alt="">
 
-        <div class="imagens">
-
-            <img src="./img/Missed chances-pana la.png" alt="">
-
-        </div>
-        
-    </section>
+            </div>
+            
+        </section>
 
     <section id="sobre" class="container">
 
@@ -83,6 +85,10 @@
         </div>
 
     </section>
+
+    <div class="botao_topo" id="botao_topo">
+        <a href="#topo"><button id="topo_button">Topo</button></a>
+    </div>
 
     <section id="contato" class="container">
 
@@ -115,7 +121,24 @@
 
     </section>
 
-    
+    <div class="box-login" id="box_login">
+
+        <form class="form_login">
+
+            <a href=""><img src="https://image.flaticon.com/icons/png/512/66/66822.png" alt=""></a>
+
+            <h1>Entrar</h1> <br>
+
+            <input id="idEmail" type="email" placeholder="Email">
+
+            <input id="idSenha" type="password" placeholder="Senha" maxlength="8">
+
+            <button>Entrar</button>
+
+                <div class="text_login"><span>Ainda não possui uma conta? </span><a href="">Cadastre-se</a></div>
+        </form>
+
+    </div>
 
     <footer>
         <div class="container">
@@ -128,22 +151,4 @@
 </body>
 </html>
 
-<script>
-    
-    var checkboxmenu = document.getElementById("checkbox_menu");
-    document.getElementById("checkbox_menu").onclick = function () {
-        
-    if (checkboxmenu.checked) {
-        menu.style = "display: block"
-    } else {
-        menu.style = "display: none"
-    }
-}
-
-function check (){
-    
-    checkboxmenu.checked = false;
-    menu.style = "display: none"
-}
-
-</script>
+<script src="./script.js"></script>
