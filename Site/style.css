@@ -4,7 +4,7 @@
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
 
-a{
+ul a{
     text-decoration: none;
     display: block;
 }
@@ -22,6 +22,7 @@ ul{
     /* background-color: aqua; */
     position: relative;
 }
+
 
 
 .forma img{                 /* imagem da forma */
@@ -58,21 +59,31 @@ ul{
 .header nav{
     background-color: white;
     width: 20%;
-    height: 30%;
-    top: 15%;
+    height: 17%;
+    top: 60px;
     position: absolute;
     display: none;
     z-index: 9999;
 }
 
-#menu a{
+#menu li a, #menu li{
     color: black;
+}
+
+#menu li{
     font-size: 100%;
     padding-top: 7%;
 }
 
-#menu a:hover{
+#menu input{
+    opacity: 0;
+}
+
+#menu li:hover, #menu li a:hover{
     color: #FF7400;
+}
+
+#menu li:hover{
     padding-top: 6%;
 }
 
@@ -91,8 +102,8 @@ ul{
 .check-orange span{
     position: absolute;
     display: block;
-    height: 1%;
-    width: 2.25%;
+    height: 5px;
+    width: 25px;
     border-radius: 30px;
     background-color: #FF7400;
     /* #f16234 */
@@ -102,23 +113,23 @@ ul{
 
 
 .check-orange span:nth-child(1){
-    top: 8.5%;
+    top: 34px;
 }
 
 .check-orange span:nth-child(2){
-    top: 10%;
-    background-color: black;
+    top: 42px;
+    background-color: black
 }
 
 .check-orange span:nth-child(3){
-    top: 11.5%;
+    top: 50px;
 }
 
 
 
 #checkbox_menu:checked + .check-orange span:nth-child(1){
     transform: rotate(-45deg);
-    top:10%
+    top: 42px;
 }
 
 #checkbox_menu:checked + .check-orange span:nth-child(2){
@@ -127,7 +138,7 @@ ul{
 
 #checkbox_menu:checked + .check-orange span:nth-child(3){
     transform: rotate(45deg);
-    top:10%
+    top: 42px;
 }
 
 .infos{      
@@ -147,8 +158,9 @@ ul{
 
 .infos button{
     position: absolute;
-    bottom: -22%;
+    bottom: -28%;
     cursor: pointer;
+    left: 0;
     font-size: 95%;
     border: none;
     text-align: center;
@@ -159,7 +171,7 @@ ul{
 }
 
 .infos button:hover{
-    bottom: -21%;
+    bottom: -27%;
 }
 
 #topo{
@@ -240,6 +252,131 @@ ul{
     margin-bottom: 35%;
 }
 
+.botao_topo{
+    width: 25%;
+    height: 25%;
+    display: none;
+    
+}
+
+.botao_topo button{
+    width: 5%;
+    height: 4.5%;
+    bottom: 10%;
+    right: 10%;
+    position: fixed;
+    cursor: pointer;
+    font-size: 95%;
+    border: none;
+    text-align: center;
+    border-radius: 40px;
+    padding: 1.5% 1% 3% 1%;   /* cima direita baixo esquerda */
+    color: white;
+    background-color: #ff7400;
+    z-index: 9999;
+}
+
+.botao_topo button:hover {
+    bottom: 11%;
+}
+
+.imagem_cadastro{                  /* div da imagem do player */
+    width: 50%;
+    position: absolute;
+    right: 5%;
+    top: 0;
+}
+
+.imagem_cadastro img{           /* imagem do player */
+    width:110%;
+}
+
+.box_form{
+    position: relative;                        /* textos principais */
+    width: 50%;
+    /* background-color: blueviolet; */
+    padding-top: 6%;
+    
+}
+
+.form_cadastro{
+    text-align: left;
+}
+
+.form_cadastro h1{
+    font-size: 30px;
+}
+
+.form_cadastro input, .box-login input{
+    display: block;
+    width: 60%;
+    margin: auto;
+    margin-bottom: 5%;
+    border: 3px solid black; /* #FF7400 */
+    border-radius: 5px;
+    height: 40px;
+    padding: 0 6px 0 12px;
+}
+
+.form_cadastro input{
+    margin-left: 0;
+}
+
+.form_cadastro button, .box-login button{
+    
+    cursor: pointer;
+    font-size: 95%;
+    border: none;
+    text-align: center;
+    border-radius: 40px;
+    padding: 3% 3% 3% 3%;   /* cima direita baixo esquerda */
+    color: white;
+    background-color: #ff7400;
+
+}
+
+.form_cadastro button:hover{
+    margin-left: 1%;
+}
+
+.text_cadastro{
+    
+    margin-top: 5%;
+}
+
+
+
+.text_cadastro a, .text_login a{
+    color: #ff7400;
+}
+    
+.box-login{
+    position: fixed;
+    width: 30%;
+    height: 50%;
+    left: 35%;
+    top: 25%;
+    background-color: #fce4d2;
+    text-align: center;
+    border-radius: 20px;
+    display: none;
+}
+
+.text_login{
+    margin-top: 2%;
+}
+
+
+.form_login{
+    margin-top: 5%;
+}
+
+.form_login a img {
+    position: absolute;
+    top: 10%;
+    left: 10%;
+    width: 5%;
+}
 
 footer{
     padding-top: 1.5%;
@@ -255,28 +392,19 @@ footer a{
     padding-top: 0.5%;
     color: #ff7400;
     float: right;
+    text-decoration: none;
 }
 
 
 
-
-
-@media screen and (max-width: 768px){
-    .container{
-        width: 95%;
-    }
+/* @media screen and (max-width: 768px){
+  
     
 }
 
 @media screen and (max-width: 600px){
 
-    .container{
-        width: 120%;
-    }
 
-    .infos span{
-        display: none;
-    }
     
-}
+} */
 
