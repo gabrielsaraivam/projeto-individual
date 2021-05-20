@@ -7,11 +7,13 @@
 ul a{
     text-decoration: none;
     display: block;
+    
 }
 
 ul{
     list-style: none;
 }
+
 
 /* FF7400 */
 
@@ -47,9 +49,16 @@ ul{
 
 
 .header{
-    padding-top: 2.5%;
-    width: 100%;
+    padding-top: 1.1%;
+    padding-bottom: 1%;
+    width: 80%;
+    padding-left: 10%;
+    padding-right: 10%;
+    margin: auto;
     /* background-color: red; */
+    position: fixed;
+    z-index: 9999;
+
 }
 
 .header h2{
@@ -58,8 +67,8 @@ ul{
 
 .header nav{
     background-color: white;
-    width: 20%;
-    height: 17%;
+    width: 15%;
+    height: 160px;
     top: 60px;
     position: absolute;
     display: none;
@@ -113,23 +122,23 @@ ul{
 
 
 .check-orange span:nth-child(1){
-    top: 34px;
+    top: 22px;
 }
 
 .check-orange span:nth-child(2){
-    top: 42px;
+    top: 30px;
     background-color: black
 }
 
 .check-orange span:nth-child(3){
-    top: 50px;
+    top: 38px;
 }
 
 
 
 #checkbox_menu:checked + .check-orange span:nth-child(1){
     transform: rotate(-45deg);
-    top: 42px;
+    top: 30px;
 }
 
 #checkbox_menu:checked + .check-orange span:nth-child(2){
@@ -138,14 +147,14 @@ ul{
 
 #checkbox_menu:checked + .check-orange span:nth-child(3){
     transform: rotate(45deg);
-    top: 42px;
+    top: 30px;
 }
 
 .infos{      
     position: relative;                        /* textos principais */
     width: 50%;
-    /* background-color: blueviolet; */
-    padding-top: 20%;
+    
+    padding-top: 25%;
 }
 
 .infos h1{
@@ -183,6 +192,7 @@ ul{
     /* float: left; */
     width: 50%;
     position: relative;
+    padding-top: 5%;
 }
 
 
@@ -190,7 +200,7 @@ ul{
     
     position: absolute;
     right: 0;
-    top: 15%;
+    top: 20%;
     width: 50%;
     
 
@@ -210,7 +220,7 @@ ul{
 }
 
 .imagem_sobre img{
-    width: 70%;
+    width: 65%;
 
 }
 
@@ -218,7 +228,7 @@ ul{
     position: absolute;
     right: 0;
     width: 50%;
-    top: 0;
+    top: 30px;
     /* float: right; */
     
 }
@@ -231,6 +241,7 @@ ul{
     float: left;
     width: 50%;
     text-align: center;
+    margin-top: 5%;
     margin-bottom: 5%;
     
 }
@@ -253,31 +264,32 @@ ul{
 }
 
 .botao_topo{
-    width: 25%;
-    height: 25%;
+    width: 5px;
+    height: 25px;
     display: none;
-    
-}
-
-.botao_topo button{
-    width: 5%;
-    height: 4.5%;
-    bottom: 10%;
-    right: 10%;
+    bottom: 11%;
     position: fixed;
-    cursor: pointer;
-    font-size: 95%;
-    border: none;
-    text-align: center;
-    border-radius: 40px;
-    padding: 1.5% 1% 3% 1%;   /* cima direita baixo esquerda */
-    color: white;
-    background-color: #ff7400;
+    right: 10%;
     z-index: 9999;
 }
 
-.botao_topo button:hover {
-    bottom: 11%;
+.botao_topo  span{
+    position: absolute;
+    height: 5px;
+    width: 25px;
+    border-radius: 30px;
+    background-color: #FF7400;
+
+}
+
+.botao_topo span:nth-child(1){
+    transform: rotate(45deg);
+    right: 0;
+}
+
+.botao_topo span:nth-child(2){
+    transform: rotate(-45deg);
+    right: 15px;
 }
 
 .imagem_cadastro{                  /* div da imagem do player */
@@ -295,7 +307,7 @@ ul{
     position: relative;                        /* textos principais */
     width: 50%;
     /* background-color: blueviolet; */
-    padding-top: 6%;
+    padding-top: 12%;
     
 }
 
@@ -360,6 +372,9 @@ ul{
     text-align: center;
     border-radius: 20px;
     display: none;
+    -webkit-box-shadow: 0px 0px 12px 0px rgba(50, 50, 50, 0.34);
+    -moz-box-shadow:    0px 0px 12px 0px rgba(50, 50, 50, 0.34);
+    box-shadow:         0px 0px 12px 0px rgba(50, 50, 50, 0.34);
 }
 
 .text_login{
@@ -378,17 +393,92 @@ ul{
     width: 5%;
 }
 
-footer{
+.form_cadastro select, #btn_cadastro_final{
+    font-size: 15px;
+    width: 35%;
+    height: 40px;
+    border: 3px solid black; /* #FF7400 */
+    border-radius: 5px;
+    padding: 0 6px 0 12px;
+    margin-top: 5%;
+}
+
+#btn_cadastro_final{
+    border:none;
+}
+
+.card{
+    background: linear-gradient(to bottom, #ff7400 80%, #cc5c00);
+    width: 75%;
+    height: 220px;
+    border-radius: 5px;
+    margin-top: 35%;
+    margin-left: 15%;
+    box-shadow: 5px 9px 14px rgba(51, 51, 51, 0.63);
+    position: relative;
+}
+
+.logo{
+    width: 15%;
+    height: 25%;
+    position: absolute;
+    left: 5%;
+    top: 7%;
+}
+
+.logo img {
+    width: 100%;
+    height: 100%;
+}
+
+.sinal{
+    width: 6.5%;
+    position: absolute;
+    right: 5%;
+    top: 7%;
+}
+
+.sinal img {
+    width: 100%;
+    height: 100%;
+}
+
+.nome{
+    position: absolute;
+    bottom: 30%;
+    left: 5%;
+}
+
+.numero{
+    position: absolute;
+    left: 5%;
+    bottom: 18%;
+}
+
+.fan{
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}
+
+.fan img {
+    width: 20%;
+    position: absolute;
+    bottom: 0;
+    left: 40%;
+}
+
+.footer_index{
     padding-top: 1.5%;
     padding-bottom: 1.5%;
     background-color: black;
 }
 
-footer img{
+.footer_index img{
     width: 10%;
 }
 
-footer a{
+.footer_index a{
     padding-top: 0.5%;
     color: #ff7400;
     float: right;
