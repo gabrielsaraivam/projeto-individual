@@ -21,32 +21,33 @@
         <img src="./img/Camada 2.png" alt="">
     </div>
 
-    <section  class="container">
+    <div class="header"> 
 
-        <div class="header"> 
+        <nav id="menu" class="nav_cadastro">
+            <ul onclick="check()">
+                <li><a href="">Home</a></li>
+                <li><a href="">Entrar</a></li>
+            </ul>
+        </nav>
 
-            <nav id="menu" class="nav_cadastro">
-                <ul onclick="check()">
-                    <li><a href="">Home</a></li>
-                    <li><a href="">Entrar</a></li>
-                </ul>
-            </nav>
-
-            <div class="menu-burguer">
-                <input type="checkbox" id="checkbox_menu">
-                <label for="checkbox_menu" class="check-orange" id="label-check">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </label>
-            </div>
-
-            <h2>Sócio Rei</h2>
-
+        <div class="menu-burguer">
+            <input type="checkbox" id="checkbox_menu">
+            <label for="checkbox_menu" class="check-orange" id="label-check">
+                <span></span>
+                <span></span>
+                <span></span>
+            </label>
         </div>
 
+        <h2>Sócio Rei</h2>
+
+    </div>
+
+
+    <section  class="container">
+
         <div class="box_form">
-            <form class="form_cadastro">
+            <form class="form_cadastro" onsubmit="gerar_card()">
                 <h1>Cadastre-se</h1> <br>
 
                 <input id="idNome" type="text" placeholder="Nome" maxlength="25">
