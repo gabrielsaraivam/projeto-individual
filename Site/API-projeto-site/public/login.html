@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<link rel="stylesheet" href="./style.css">
+<body style="overflow-y: hidden;">
+    <div class="header"> 
+
+        <nav id="menu" class="nav_cadastro">
+            <ul onclick="check()">
+                <li><a href="./index.html">Home</a></li>
+                <li><a href="./cadastro.html">Cadastre-se</a></li>
+            </ul>
+        </nav>
+
+        <div class="menu-burguer">
+            <input type="checkbox" id="checkbox_menu">
+            <label for="checkbox_menu" class="check-orange" id="label-check">
+                <span></span>
+                <span></span>
+                <span></span>
+            </label>
+        </div>
+
+        <h2>Sócio Rei</h2>
+
+    </div>
+
+    <div class="box-login" id="box_login">
+
+        <form class="form_login" id="form_login" method="post" onsubmit="return entrar()">
+
+
+            <h1>Entrar</h1> <br>
+
+            <input id="idEmail" type="email" placeholder="Email" name="login">
+
+            <input id="idSenha" type="password" placeholder="Senha" maxlength="12" name="senha">
+
+            <button>Entrar</button>
+
+                <div class="text_login"><span>Ainda não possui uma conta? </span><a href="./cadastro.html">Cadastre-se</a></div>
+        </form>
+
+    </div>
+
+    <div class="img_left">
+        <img src="./img/Football Goal-pana.png" alt="">
+    </div>
+</body>
+</html>
+
+<script src="./script.js"></script>
+
+<script>
+        function entrar() {
+            sessionStorage.clear();
+        var formulario = new URLSearchParams(new FormData(form_login));
+        fetch("/usuarios/autenticar", {
+            method: "POST",
+            body: formulario
+        }).then(resposta => {
+
+            if (resposta.ok) {
+
+                resposta.json().then(json => {
+
+                    sessionStorage.id_usuario_meuapp = json.idUsuario;
+                    sessionStorage.nome_usuario_meuapp = json.nome;
+                    sessionStorage.sobrenome_usuario_meuapp = json.sobrenome
+                    sessionStorage.login_usuario_meuapp = json.email;
+                    sessionStorage.numeroCartao_meuapp = json.numeroCartao;
+                    sessionStorage.digitoCartao_meuapp = json.digitoCartao;
+                    sessionStorage.cor_cartao_meuapp = json.corCartao;
+                    sessionStorage.clube_meuapp = json.clube
+                
+                    window.location.href = 'meucartao.html';
+                });
+
+            } else {
+
+                console.log('Erro de login!');
+
+                resposta.text().then(texto => {
+                    console.error(texto);
+                    
+                });
+            }
+        });
+
+        return false;
+    }
+</script>

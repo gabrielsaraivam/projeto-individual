@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <nav class="nav_dash" id="nav_dash">
+        <div class="logo2" id="logo2">
+            <img src="https://logospng.org/download/brasileirao-serie-a/logo-brasileirao-2048.png" alt="">
+        </div>
+        <div class="nome2
+        " id="nome2">
+                
+        </div>
+        <div class="itens_nav_dash">   
+            <ul>
+                <li> <a href="./beneficios.html" id="a_beneficio"><b>Beneficios</b></a></li>
+                <li> <a href="./meucartao.html" id="a_cartao">Meu cartão</a></li>
+                <li> <a href="./estatistica.html" id="a_estatistica">Estatística</a></li>
+            </ul>     
+        </div>
+    </nav>
+
+    <div class="div_beneficios">
+        <div class="beneficios" id="beneficios"> <br>
+            <img src="./img/stadium.png" alt=""> <br>
+            <span id="span_stadium">80% de desconto <br> na arquibancada <br>
+            e 10% no térreo</span>
+        </div>
+
+        <div class="beneficios" id="beneficios2"> <br>
+            <img src="./img/mug.png" alt=""><br>
+            <span id="span_mug">Caneca e camisa <br> sócio personalizada</span>
+        </div>
+
+        <div class="beneficios" id="beneficios3"> <br>
+            <img src="./img/card.png" alt=""><br>
+            <span id="span_card">Cartão Sócio <br> personalizado</span>
+        </div>
+    </div>
+
+
+    
+</body>
+</html>
+
+<script src="./script.js"></script>
+<script src="./funcoes.js"></script>
+
+<script>
+    verificar_posts();
+    verificar_card_nav();
+
+    
+    corCartao = sessionStorage.cor_cartao_meuapp;
+
+    
+    if (corCartao == "preto"){
+        span_stadium.innerHTML = `80% de desconto <br> na arquibancada <br>
+            e 50% no térreo`
+        span_mug.innerHTML =`Caneca, mochila e<br> camisa sócio personalizada`
+        span_card.innerHTML =`Cartão Sócio <br> personalizado`
+    }
+
+    if (corCartao == "verde" || corCartao == "vermelho"){
+        span_stadium.innerHTML = `Arquibancada grátis <br>
+            e 80% de desconto <br>no térreo`
+        span_mug.innerHTML =`Caneca, mochila,<br> camisa sócio e <br> camisa oficial`
+        span_card.innerHTML =`Cartão Sócio <br> personalizado`
+    }
+</script>
+

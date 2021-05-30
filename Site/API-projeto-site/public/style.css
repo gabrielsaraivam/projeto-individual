@@ -1,0 +1,719 @@
+*{
+    padding: 0;
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+
+    user-select: none;
+}
+
+ul a{
+    text-decoration: none;
+    display: block;
+    
+}
+
+ul{
+    list-style: none;
+}
+
+
+/* FF7400 */
+
+.container{
+    width: 80%;
+    
+    margin: auto;
+    /* background-color: aqua; */
+    position: relative;
+}
+
+
+
+.forma img{                 /* imagem da forma */
+    position: absolute;    
+    right: 0;
+    width: 50%;
+    
+}
+
+.imagens{                  /* div da imagem do player */
+    width: 50%;
+    position: absolute;
+    right: 5%;
+    top: 0;
+}
+
+
+.imagens img{           /* imagem do player */
+    width:100%;
+}
+
+
+
+.header{
+    padding-top: 1.1%;
+    padding-bottom: 1%;
+    width: 80%;
+    padding-left: 10%;
+    padding-right: 10%;
+    margin: auto;
+    /* background-color: red; */
+    position: fixed;
+    z-index: 9999;
+
+}
+
+.header h2{
+    padding-left: 4%;
+}
+
+.header nav{
+    background-color: white;
+    width: 15%;
+    height: 160px;
+    top: 60px;
+    position: absolute;
+    display: none;
+    z-index: 9999;
+}
+
+#menu li a, #menu li{
+    color: black;
+}
+
+#menu li{
+    font-size: 100%;
+    padding-top: 7%;
+}
+
+#menu input{
+    opacity: 0;
+}
+
+#menu li:hover, #menu li a:hover{
+    color: #FF7400;
+}
+
+#menu li:hover{
+    padding-top: 6%;
+}
+
+#checkbox_menu {
+    position: absolute;
+    opacity: 0;
+    top: 20%;
+}
+
+
+.check-orange{
+    cursor: pointer;
+}
+
+
+.check-orange span{
+    position: absolute;
+    display: block;
+    height: 5px;
+    width: 25px;
+    border-radius: 30px;
+    background-color: #FF7400;
+    /* #f16234 */
+    transition: 0.25s ease-in-out;
+}
+
+
+
+.check-orange span:nth-child(1){
+    top: 22px;
+}
+
+.check-orange span:nth-child(2){
+    top: 30px;
+    /* background-color: #FF7400 */
+}
+
+.check-orange span:nth-child(3){
+    top: 38px;
+}
+
+
+
+#checkbox_menu:checked + .check-orange span:nth-child(1){
+    transform: rotate(-45deg);
+    top: 30px;
+}
+
+#checkbox_menu:checked + .check-orange span:nth-child(2){
+    opacity: 0;
+}
+
+#checkbox_menu:checked + .check-orange span:nth-child(3){
+    transform: rotate(45deg);
+    top: 30px;
+}
+
+.infos{      
+    position: relative;                        /* textos principais */
+    width: 50%;
+    
+    padding-top: 25%;
+}
+
+.infos h1{
+    font-size: 50px;
+    margin-top: -10%;
+    margin-bottom: 5%;
+}
+
+
+
+.infos a button{
+    position: absolute;
+    bottom: -28%;
+    cursor: pointer;
+    left: 0;
+    font-size: 95%;
+    border: none;
+    text-align: center;
+    border-radius: 40px;
+    padding: 3% 3% 3% 3%;   /* cima direita baixo esquerda */
+    color: white;
+    background-color: #FF7400;
+}
+
+.infos button:hover{
+    bottom: -27%;
+}
+
+/* .infos button a{
+    text-decoration: none;
+    color: white;
+} */
+
+#topo{
+    margin-bottom: 25%;
+}
+
+
+.imagem_sobre{
+    /* float: left; */
+    width: 50%;
+    position: relative;
+    padding-top: 5%;
+}
+
+
+.text_sobre{
+    
+    position: absolute;
+    right: 0;
+    top: 20%;
+    width: 50%;
+    
+
+    /* background-color: blueviolet; */
+}
+
+/* .text_sobre h1, .text_sobre span, .text_sobre a{
+    padding-left: 10%;
+} */
+
+.text_sobre h1{
+    font-size: 50px;
+}
+
+.text_sobre span{
+    font-size: 20px;
+}
+
+.imagem_sobre img{
+    width: 65%;
+
+}
+
+.imagem_contato{
+    position: absolute;
+    right: 0;
+    width: 50%;
+    top: 30px;
+    /* float: right; */
+    
+}
+
+.imagem_contato img{
+    width: 100%;
+}
+
+.box-item {
+    float: left;
+    width: 50%;
+    text-align: center;
+    margin-top: 5%;
+    margin-bottom: 5%;
+    cursor: pointer;
+}
+
+.box-item a{
+    text-decoration: none;
+    color: black;
+}
+
+.text_contato{
+    width: 50%;
+    /* float: left; */
+    position: relative;
+    margin-top: 20%;
+    padding-top: 8%;
+
+}
+
+.text_contato img{
+    width: 40%;
+}
+
+#contato{
+    margin-bottom: 35%;
+}
+
+.botao_topo{
+    width: 5px;
+    height: 25px;
+    display: none;
+    bottom: 11%;
+    position: fixed;
+    right: 10%;
+    z-index: 9999;
+}
+
+.botao_topo  span{
+    position: absolute;
+    height: 5px;
+    width: 25px;
+    border-radius: 30px;
+    background-color: #FF7400;
+
+}
+
+.botao_topo span:nth-child(1){
+    transform: rotate(45deg);
+    right: 0;
+}
+
+.botao_topo span:nth-child(2){
+    transform: rotate(-45deg);
+    right: 15px;
+}
+
+.imagem_cadastro{                  /* div da imagem do player */
+    width: 50%;
+    position: absolute;
+    right: 5%;
+    top: 0;
+}
+
+.imagem_cadastro img{           /* imagem do player */
+    width:110%;
+}
+
+.box_form{
+    position: relative;                        /* textos principais */
+    width: 50%;
+    /* background-color: blueviolet; */
+    padding-top: 12%;
+    
+}
+
+.form_cadastro{
+    text-align: left;
+}
+
+.form_cadastro h1{
+    font-size: 30px;
+}
+
+.form_cadastro input, .box-login input{
+    display: block;
+    width: 60%;
+    margin: auto;
+    margin-bottom: 5%;
+    border: 3px solid black; /* #FF7400 */
+    border-radius: 5px;
+    height: 40px;
+    padding: 0 6px 0 12px;
+}
+
+.form_cadastro input{
+    margin-left: 0;
+}
+
+.form_cadastro button, .box-login button{
+    
+    cursor: pointer;
+    font-size: 95%;
+    border: none;
+    text-align: center;
+    border-radius: 40px;
+    padding: 3% 3% 3% 3%;   /* cima direita baixo esquerda */
+    color: white;
+    background-color: #ff7400;
+
+}
+
+.form_cadastro button:hover{
+    margin-left: 1%;
+}
+
+.text_cadastro{
+    
+    margin-top: 5%;
+}
+
+
+
+.text_cadastro a, .text_login a{
+    color: #ff7400;
+}
+    
+.box-login{
+    position: fixed;
+    width: 30%;
+    height: 50%;
+    left: 35%;
+    top: 25%;
+    z-index: 9999;
+    background-color: white;
+    /* #fce4d2 */
+    text-align: center;
+    border-radius: 20px;
+    display: block;
+    -webkit-box-shadow: 0px 0px 12px 0px rgba(50, 50, 50, 0.34);
+    -moz-box-shadow:    0px 0px 12px 0px rgba(50, 50, 50, 0.34);
+    box-shadow:         0px 0px 12px 0px rgba(50, 50, 50, 0.34);
+}
+
+.text_login{
+    margin-top: 2%;
+}
+
+
+.form_login{
+    margin-top: 5%;
+}
+
+.form_login a img {
+    position: absolute;
+    top: 10%;
+    left: 10%;
+    width: 5%;
+}
+
+.form_cadastro select, .btn_cadastro_final{
+    font-size: 15px;
+    width: 35%;
+    height: 40px;
+    border: 3px solid black; /* #FF7400 */
+    border-radius: 5px;
+    padding: 0 6px 0 12px;
+    margin-top: 5%;
+}
+
+.btn_cadastro_final{
+    cursor: pointer;
+    border:none;
+}
+
+#btn_cadastro_final{
+    background-color: #FF7400;
+}
+
+.card{
+    background: linear-gradient(to bottom, #ff7400 80%, #cc5c00);
+    width: 75%;
+    height: 220px;
+    border-radius: 5px;
+    margin-top: 35%;
+    margin-left: 15%;
+    box-shadow: 5px 9px 14px rgba(51, 51, 51, 0.63);
+    position: relative;
+}
+
+.logo{
+    width: 15%;
+    height: 25%;
+    position: absolute;
+    left: 5%;
+    top: 7%;
+}
+
+.logo img {
+    width: 100%;
+    height: 100%;
+}
+
+.sinal{
+    width: 6.5%;
+    position: absolute;
+    right: 5%;
+    top: 7%;
+}
+
+.sinal img {
+    width: 100%;
+    height: 100%;
+}
+
+.nome{
+    position: absolute;
+    bottom: 30%;
+    left: 5%;
+    text-transform: uppercase;
+}
+
+.numero{
+    position: absolute;
+    left: 5%;
+    bottom: 18%;
+}
+
+.fan{
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}
+
+.fan img {
+    width: 20%;
+    position: absolute;
+    bottom: 0;
+    left: 40%;
+}
+
+.footer_index{
+    padding-top: 1.5%;
+    padding-bottom: 1.5%;
+    background-color: black;
+}
+
+.footer_index a img{
+    width: 10%;
+}
+
+/* .footer_index a{
+    padding-top: 0.5%;
+    color: #ff7400;
+    float: right;
+    text-decoration: none;
+} */
+
+#freepik{
+    padding-top: 0.5%;
+    color: #ff7400;
+    float: right;
+    text-decoration: none;
+}
+
+#idCard, #idDigito{
+    display: none;
+}
+
+/* nav dash */
+
+.nav_dash{
+    background: linear-gradient(to bottom, #C30DFF 80%, #9C0ACC);
+    width: 100%;
+    height: 10vh;
+    font-size: 20px;
+    box-shadow: 0 8px 8px -10px rgb(0 0 0 / 15%);
+}
+
+#nav_dash img{
+    height:49.89px;
+    width: 53px;
+}
+
+.logo2{
+    width: 15%;
+    height: 25%;
+    position: absolute;
+    left: 5%;
+    top: 1%;
+}
+
+.nome2{   
+    /* text-align: left; */
+    padding-left: 10%;
+    padding-top: 1%;
+    float: left;
+
+}
+
+.itens_nav_dash{
+    /* background-color: violet; */
+    height: 50%;
+    width: 50%;
+    margin: auto;
+    text-align: center; 
+    padding-top: 1.2%;
+}
+
+.itens_nav_dash a{
+    color: black;
+    text-decoration: none;
+}
+
+.itens_nav_dash ul li{
+    /* padding-top: 10%; */
+    display: inline-block;
+    padding-left: 4%;
+}
+
+.card_dash{
+    width: 42%;
+    position: absolute;
+    left: 40%;
+    top: 5%;
+}
+
+.div_bene{
+    width:80%;
+    height: 100vh;
+    /* background-color: blueviolet; */
+    float: left;
+    position: relative;
+}
+
+.div_img{
+    z-index: 10;
+}
+
+.div_img img {
+    width: 58%;
+    opacity: 0.08;
+    padding-left: 15%;
+    position: absolute;
+    bottom: 0;
+}
+
+.div_bene h1{
+    text-align: center;
+    padding-top: 5%;
+}
+
+.div_beneficios{
+    width:80%;
+    height: 40vh;
+    margin-left: 7%;
+    /* background-color: blueviolet; */
+    position: relative;
+}
+
+
+.beneficios{
+    
+    background-color: crimson;
+    text-align: center;
+    width: 25%;
+    height: 100%;
+    border-radius: 5%;
+    margin-top: 15%;
+    margin-left: 8%;
+    /* display: inline-block; */
+    float: left;
+    color: white;
+}
+
+/* #beneficios:hover, #beneficios2:hover, #beneficios3:hover{
+    width: 26.5%;
+    height: 66.5%;
+    margin-top: 4.25%;
+    margin-left: 5.25%
+} */
+
+.beneficios img{
+    height: 25%;
+    margin-top: 10%;
+    margin-bottom: 10%;
+}
+
+#beneficios3 img{
+    height: 22%;
+    margin-top: 11.5%
+}
+
+.img_left img{
+    width: 60%;
+}
+
+.cor_beneficio{
+    position: fixed;
+    width: 65%;
+    height: 57%;
+    left: 20%;
+    top: 20%;
+    z-index: 9999;
+    background-color: white;
+    /* #fce4d2 */
+    text-align: center;
+    border-radius: 20px;
+    display: none;
+    -webkit-box-shadow: 0px 0px 12px 0px rgba(50, 50, 50, 0.34);
+    -moz-box-shadow:    0px 0px 12px 0px rgba(50, 50, 50, 0.34);
+    box-shadow:         0px 0px 12px 0px rgba(50, 50, 50, 0.34);
+}
+
+.cor_beneficio h2{
+    padding-top: 5%;
+    padding-bottom: 5%;
+}
+
+.cor_beneficio img{
+    position: absolute;
+    top: 7%;
+    left: 5%;
+    width: 3%;
+    cursor: pointer;
+}
+
+.box_cor{
+    display: inline-block;
+    margin: auto;
+    margin-top: 3.5%;
+    margin-left: 3%;
+    margin-right: 3%;
+}
+
+#jogador{
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}
+
+#jogador img {
+    width: 30%;
+    position: absolute;
+    bottom: 0;
+    left: 10%;
+}
+
+.grafics{
+    width: 25%;
+    background-color: rgb(230, 227, 227);
+    padding: 30px;
+    border-radius: 20px;
+    text-align: center;
+    display: inline-block;
+    margin-left: 13%;
+    margin-top: 5%;
+    
+}
+/* @media screen and (max-width: 768px){
+  
+    
+}
+
+@media screen and (max-width: 600px){
+
+
+    
+} */
+

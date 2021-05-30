@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+
+    <link rel="stylesheet" href="./style.css">
+
+    <script src="https://code.jquery.com/jquery-1.11.0.min.js"></script>
+    
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.15/jquery.mask.min.js"></script>
+
+    <script src="./funcoes.js"></script>
+
+<body>
+
+    <div class="forma">
+        <img src="./img/Camada 2.png" alt="">
+    </div>
+
+    <div class="header"> 
+
+        <nav id="menu" class="nav_cadastro">
+            <ul onclick="check()">
+                <li><a href="">Home</a></li>
+                <li><a href="">Entrar</a></li>
+            </ul>
+        </nav>
+
+        <div class="menu-burguer">
+            <input type="checkbox" id="checkbox_menu">
+            <label for="checkbox_menu" class="check-orange" id="label-check">
+                <span></span>
+                <span></span>
+                <span></span>
+            </label>
+        </div>
+
+        <h2>Sócio Rei</h2>
+
+    </div>
+
+
+    <section  class="container">
+
+        <div class="box_form">
+
+            <form class="form_cadastro" id="form_cadastro">
+                <h1>Finalize seu <br> cadastro</h1> <br>
+                
+                <select name="cor_cartao" id="select_time" onchange="time()">
+                    <option value="nenhum">Selecione seu time</option>
+                    <option value="spfc">São Paulo FC</option>
+                    <option value="sep">Palmeiras</option>
+                </select>
+                <br>
+                <select name="clube_cartao" id="select_cor" onchange="card_cor()">
+                    <option value="nenhum">Escolha a cor</option>
+                    <option value="lj">Laranja</option>
+                    <option value="pt">Preto</option>
+                    <option value="vm" id="cor_vermelho">Vermelho</option>
+                    <option value="vd" id="cor_verde">Verde</option>
+                </select>
+                <br>
+                <input id="valor_fkestilo" name="FKestilo" style="display: none;">
+            </form>
+
+            <div id="botoes">
+                <button onclick="box_planos()" class="btn_cadastro_final">Beneficios de cada cor</button> <br>
+
+                <button id="btn_cadastro_final" onclick="cadastro_part2 ()" class="btn_cadastro_final">Finalizar cadastro</button>
+            </div> 
+            
+
+        </div>
+
+        <div class="imagem_cadastro">
+
+            <div class="card" id="card">
+
+                <div class="logo" id="logo">
+                    <img src="https://logospng.org/download/brasileirao-serie-a/logo-brasileirao-2048.png" alt="">
+
+                    <!-- <img src="https://logodownload.org/wp-content/uploads/2016/09/sao-paulo-logo-escudo-1.png" alt=""> spfc -->
+                </div>
+
+                <div class="nome" id="nome">
+                    
+                </div>
+
+                <div class="numero" id="numero">
+                    
+                </div>
+
+                <div class="sinal" id="sinal">
+                    <img src="./img/sinal preto.png" alt="">
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <div class="cor_beneficio" id="cor_beneficio">
+
+        <img src="https://image.flaticon.com/icons/png/512/66/66822.png" alt="" onclick="fechar_planos()">
+
+        <div class="box_cor">
+            <h2>Plano Laranja</h2>
+            <span>80% de desconto na arquibancada e 10% no térreo <br> 
+                    Caneca e camisa sócio personalizada <br>
+                        Cartão Sócio personalizado
+                    </span>
+        </div>
+
+        <div class="box_cor">
+                <h2>Plano Preto</h2>
+                <span>80% de desconto na arquibancada e 50% no térreo <br> 
+                    Caneca, mochila e camisa sócio personalizada<br>
+                    Cartão Sócio personalizado</span>
+        </div>
+
+        <div class="box_cor">
+            <h2>Plano Vermelho</h2>
+            <span>Arquibancada grátis e 80% de desconto no térreo<br> 
+                Caneca, mochila, camisa sócio e camisa oficial<br>
+                Cartão Sócio personalizado</span>
+        </div>
+
+        <div class="box_cor">
+            <h2>Plano Verde</h2>
+            <span>Arquibancada grátis e 80% de desconto no térreo<br> 
+                Caneca, mochila, camisa sócio e camisa oficial<br>
+                Cartão Sócio personalizado</span>
+        </div>
+    </div>
+
+    <footer class="fan">
+        <img src="./img/Fans-pana.png" alt="">
+    </footer>
+
+
+</body>
+</html>
+
+    <script src="./script.js"></script>
+    <script>
+        verificar_card();
+
+        function cadastro_part2 (){
+            estilo_cartao()
+            var formulario = new URLSearchParams(new FormData(form_cadastro));
+            fetch(`/usuarios/update/${numeroCartao}`, {
+                method: "POST",
+                body: formulario
+                
+            }).then(function (response) {
+
+                
+                
+                if (response.ok) {
+                    response.json().then(json => {
+
+                        // alert("entro no update")
+                        sessionStorage.corCartao_meuapp = json.corCartao;
+                        sessionStorage.clube_meuapp = json.clube;
+                        window.location.href = 'login.html';
+
+                    });
+
+                } else {
+                    
+                    // alert("entro no else2")
+                    console.log('Erro de cadastro!');
+                    window.location.href = 'login.html';
+                }
+            });
+
+            return false;
+        }
+        
+
+        function box_planos(){
+            planos = document.getElementById("cor_beneficio");
+            cadastro = document.getElementById("form_cadastro");
+            cartao = document.getElementById("card");
+            botoes = document.getElementById("botoes");
+
+            planos.style.display = "block";
+            cadastro.style.display = "none";
+            card.style.display = "none";
+            botoes.style.display = "none";
+        }
+
+        function fechar_planos(){
+            planos = document.getElementById("cor_beneficio");
+            cadastro = document.getElementById("form_cadastro");
+            cartao = document.getElementById("card");
+            botoes = document.getElementById("botoes");
+
+            planos.style.display = "none";
+            cadastro.style.display = "block";
+            card.style.display = "block";
+            botoes.style.display = "block";
+        }
+
+    </script>
+
+

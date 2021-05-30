@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <nav class="nav_dash" id="nav_dash">
+        <div class="logo2" id="logo2">
+            <img src="https://logospng.org/download/brasileirao-serie-a/logo-brasileirao-2048.png" alt="">
+        </div>
+        <div class="nome2
+        " id="nome2">
+                
+        </div>
+        <div class="itens_nav_dash">   
+            <ul>
+                <li> <a href="./beneficios.html" id="a_beneficio">Beneficios</a></li>
+                <li> <a href="./meucartao.html" id="a_cartao">Meu cartão</a></li>
+                <li> <a href="" id="a_estatistica"><b>Estatística</b></a></li>
+            </ul>  
+        </div>
+    </nav>
+
+    <div id="grafics_sp">        
+        <div class="grafics">
+            <h2>Artilheiros</h2>
+            <canvas id="myChart"></canvas>
+        </div>
+    
+        <div class="grafics">
+            <h2>Assistentes</h2>
+            <canvas id="myChartAssist"></canvas>
+        </div>
+    </div>
+
+    <div id="grafics_p">        
+        <div class="grafics">
+            <h2>Artilheiros</h2>
+            <canvas id="myChartP"></canvas>
+        </div>
+    
+        <div class="grafics">
+            <h2>Assistentes</h2>
+            <canvas id="myChartAssistP"></canvas>
+        </div>
+    </div>
+
+</body>
+</html>
+<script src="./script.js"></script>
+<script src="./funcoes.js"></script>
+
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<script>
+    verificar_card_nav();
+    verificar_graphs();
+  // === include 'setup' then 'config' above ===
+
+const data = {
+  labels: [
+    'Pablo',
+    'Luciano',
+    'Gabriel Sara'
+  ],
+  datasets: [{
+    label: 'My First Dataset',
+    data: [6, 4, 4],
+    backgroundColor: [
+      'red',
+      'white',
+      'black'
+    ],
+    hoverOffset: 4,
+    borderColor: 'rgb(230, 227, 227)'
+  }]
+};
+
+const config = {
+  type: 'doughnut',
+  data: data,
+};
+
+
+var myChart = new Chart(
+    document.getElementById('myChart'),
+    config
+);
+
+const data2 = {
+  labels: [
+    'Igor V.',
+    'Reinaldo',
+    'Dani Alves'
+  ],
+  datasets: [{
+    label: 'My First Dataset',
+    data: [6, 4, 4],
+    backgroundColor: [
+      'white',
+      'black',
+      'red'
+    ],
+    hoverOffset: 4,
+    borderColor: 'rgb(230, 227, 227)'
+  }]
+};
+
+const config2 = {
+  type: 'doughnut',
+  data: data2,
+};
+
+
+var myChartAssist = new Chart(
+    document.getElementById('myChartAssist'),
+    config2
+);
+
+const data3 = {
+  labels: [
+    'Rony',
+    'Willian',
+    'Scarpa'
+  ],
+  datasets: [{
+    label: 'My First Dataset',
+    data: [7, 4, 3],
+    backgroundColor: [
+        'rgb(2, 161, 2)',
+        'white',
+      'rgb(1, 116, 1)'
+    ],
+    hoverOffset: 4,
+    borderColor: 'rgb(230, 227, 227)'
+  }]
+};
+
+const config3 = {
+  type: 'doughnut',
+  data: data3,
+};
+
+
+var myChartP = new Chart(
+    document.getElementById('myChartP'),
+    config3
+);
+
+
+const data4 = {
+  labels: [
+    'Scarpa',
+    'Luiz Adriano',
+    'Rony'
+  ],
+  datasets: [{
+    label: 'My First Dataset',
+    data: [7, 2, 2],
+    backgroundColor: [
+      'white',
+      'rgb(1, 116, 1)',
+      'rgb(2, 161, 2)'
+    ],
+    hoverOffset: 4,
+    borderColor: 'rgb(230, 227, 227)'
+  }]
+};
+
+const config4 = {
+  type: 'doughnut',
+  data: data4,
+};
+
+
+var myChartAssistP = new Chart(
+    document.getElementById('myChartAssistP'),
+    config4
+);
+
+
+</script>

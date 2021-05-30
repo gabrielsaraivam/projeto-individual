@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+
+    <link rel="stylesheet" href="./style.css">
+
+    <!-- <script src="https://code.jquery.com/jquery-1.11.0.min.js"></script> -->
+
+<body id="site">
+    
+        <div class="forma">
+            <img src="./img/Camada 2.png" alt="">
+        </div>
+
+        <div class="header" id="header"> 
+
+                <nav id="menu">
+                    <ul onclick="check()">
+                        <li><a href="#sobre">Sobre</a></li>
+                        <li><a href="./cadastro.html">Cadastre-se</a></li>
+                        <li><a href="./login.html">Entrar<a></li>
+                        <li><a href="#contato">Contato</a></li>
+                    </ul>
+                </nav>
+
+                <div class="menu-burguer">
+                    <input type="checkbox" id="checkbox_menu">
+                    <label for="checkbox_menu" class="check-orange" id="label-check">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </label>
+                </div>
+
+                <h2>Sócio Rei</h2>
+
+        </div>
+
+        <section id="topo" class="container">
+
+            <div class="infos">
+
+                <h1>Apoie o seu <br> 
+                    time do coração!! </h1>
+
+                <span>Escolha seu cartão, acompanhe as estatísticas, e veja seus benefícios <br>
+                    se inscreva e apoie ainda mais seu clube!
+                </span>
+
+                <br>
+
+                <a href="./cadastro.html"> <button>Se inscreva!</button></a>
+
+            </div>
+
+            <div class="imagens">
+
+                <img src="./img/Missed chances-pana la.png" alt="">
+
+            </div>
+            
+        </section>
+
+    <section id="sobre" class="container">
+
+        <div class="imagem_sobre">
+            <img src="./img/Soccer.png" alt="">
+        </div>
+
+        
+
+        <div class="text_sobre">
+            <h1>Quem <br>
+                 somos?</h1><br>
+            <span>Somos uma empresa que conecta o torcedor <br></span>
+                <span>    ao seu time do coração, a final o que seria dos<br></span>
+                    <span>clubes sem seus maiores apoiadores. <br></span>
+                        <span>Venha ser Sócio Rei!! <a href="">Conheça todos os beneficios</a> </span>
+        </div>
+
+    </section>
+
+    <div class="botao_topo" id="botao_topo">
+        <a href="#topo"><span></span>
+        <span></span></a>
+    </div>
+
+    <section id="contato" class="container">
+
+        <div class="imagem_contato">
+            <img src="./img/Mobile.png" alt="">
+        </div>
+
+        <div class="text_contato">
+            <div class="box-item">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/2/2e/Gmail_2020.png" alt="">
+                <h2>Gmail</h2>
+            </div>
+            
+            <div class="box-item">
+                <a href="https://github.com/gabrielsaraivam/projeto-individual">
+                    <img src="https://image.flaticon.com/icons/png/512/25/25231.png" alt="">
+                    <h2>GitHub</h2>
+                </a>
+            </div>
+            
+            <div class="box-item">
+                <img src="https://logodownload.org/wp-content/uploads/2014/09/twitter-logo-3.png" alt="">
+                <h2>Twitter</h2>
+            </div>
+
+            <div class="box-item">
+                <img src="https://image.flaticon.com/icons/png/512/174/174857.png" alt="">
+                <h2>Linkedin</h2>
+            </div>
+                
+        </div>
+
+    </section>
+
+    <!-- <div class="box-login" id="box_login">
+
+        <form class="form_login" id="form_login" method="post" onsubmit="return entrar()">
+
+            <a href=""><img src="https://image.flaticon.com/icons/png/512/66/66822.png" alt=""></a>
+
+            <h1>Entrar</h1> <br>
+
+            <input id="idEmail" type="email" placeholder="Email" name="login">
+
+            <input id="idSenha" type="password" placeholder="Senha" maxlength="12" name="senha">
+
+            <button>Entrar</button>
+
+                <div class="text_login"><span>Ainda não possui uma conta? </span><a href="">Cadastre-se</a></div>
+        </form>
+
+    </div> -->
+
+    <footer class="footer_index">
+        <div class="container">
+            <a href="http://www.digitalschool.com.br/faculdade/">
+            <img src="http://www.digitalschool.com.br/assets/images/body/faculdade/home/logo_bandtec.png" alt=""></a>
+            <a href="https://storyset.com/sport" id="freepik">Illustration by Freepik Storyset</a>
+        </div>
+    </footer>
+
+    <!-- <a href="https://storyset.com/sport">Illustration by Freepik Storyset</a> -->
+</body>
+</html>
+
+<script src="./script.js"></script>
+
+<!-- <script>
+        function entrar() {
+            sessionStorage.clear();
+        var formulario = new URLSearchParams(new FormData(form_login));
+        fetch("/usuarios/autenticar", {
+            method: "POST",
+            body: formulario
+        }).then(resposta => {
+
+            if (resposta.ok) {
+
+                resposta.json().then(json => {
+
+                    sessionStorage.id_usuario_meuapp = json.idUsuario;
+                    sessionStorage.nome_usuario_meuapp = json.nome;
+                    sessionStorage.sobrenome_usuario_meuapp = json.sobrenome
+                    sessionStorage.login_usuario_meuapp = json.email;
+                    sessionStorage.numeroCartao_meuapp = json.numeroCartao;
+                    sessionStorage.digitoCartao_meuapp = json.digitoCartao;
+                    sessionStorage.cor_cartao_meuapp = json.corCartao;
+                    sessionStorage.clube_meuapp = json.clube
+                
+                    window.location.href = 'meucartao.html';
+                });
+
+            } else {
+
+                console.log('Erro de login!');
+
+                resposta.text().then(texto => {
+                    console.error(texto);
+                    
+                });
+            }
+        });
+
+        return false;
+    }
+</script> -->

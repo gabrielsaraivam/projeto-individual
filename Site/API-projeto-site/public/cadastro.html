@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+
+    <link rel="stylesheet" href="./style.css">
+
+    <script src="https://code.jquery.com/jquery-1.11.0.min.js"></script>
+    
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.15/jquery.mask.min.js"></script>
+
+<body>
+
+    <div class="forma">
+        <img src="./img/Camada 2.png" alt="">
+    </div>
+
+    <div class="header"> 
+
+        <nav id="menu" class="nav_cadastro">
+            <ul onclick="check()">
+                <li><a href="./index.html">Home</a></li>
+                <li><a href="./login.html">Entrar</a></li>
+            </ul>
+        </nav>
+
+        <div class="menu-burguer">
+            <input type="checkbox" id="checkbox_menu">
+            <label for="checkbox_menu" class="check-orange" id="label-check">
+                <span></span>
+                <span></span>
+                <span></span>
+            </label>
+        </div>
+
+        <h2>Sócio Rei</h2>
+
+    </div>
+
+
+    <section  class="container">
+
+        <div class="box_form">
+            <form class="form_cadastro"  method="post" id="form_cadastro" onsubmit="return cadastrar()"> 
+                <!-- onsubmit="gerar_card()" -->
+                <h1>Cadastre-se</h1> <br>
+
+                <input id="idNome" name="nome" type="text" placeholder="Nome" minlength="3" maxlength="25" required="" oninvalid="setCustomValidity('OPS! Informe seu nome.')" oninput="setCustomValidity('')">
+
+                <input id="idSobrenome" name="sobrenome" type="text" minlength="3" placeholder="Sobrenome" maxlength="25"  required="" oninvalid="setCustomValidity('OPS! Informe seu sobrenome.')" oninput="setCustomValidity('')">
+
+                <input id="idEmail" name="login" type="email" placeholder="Email" required>
+
+                <input id="idSenha" name="senha" type="password" placeholder="Senha" minlength="4" maxlength="12"  required="" oninvalid="setCustomValidity('Insira uma senha entre 4 a 12 caracteres')" oninput="setCustomValidity('')">
+
+                <input id="idCard" name="fkCartao">
+
+                <input id="idDigito" name="digitoCartao">
+
+                <button>Cadastrar</button>
+
+                <div class="text_cadastro"><span>Já possui uma conta? </span><a href="./login.html"> Faça o login</a></div>
+            </form>
+
+
+        </div>
+
+        <div class="imagem_cadastro">
+
+            <img src="./img/Gift card-pana.png" alt="">
+
+        </div>
+        
+    </section>
+</body>
+</html>
+
+    <script src="./script.js"></script>
+
+    <script>
+
+
+
+        function cadastrar() {
+            sessionStorage.clear();
+            gerar_card();
+            
+
+            var formulario = new URLSearchParams(new FormData(form_cadastro));
+            fetch("/usuarios/cadastrar", {
+                method: "POST",
+                body: formulario
+                
+            }).then(function (response) {
+
+                
+                
+                if (response.ok) {
+                    response.json().then(json => {
+
+                        sessionStorage.nome_usuario_meuapp = json.nome;
+                        sessionStorage.sobrenome_usuario_meuapp = json.sobrenome;
+                        
+                        
+                        // alert("entro no if")
+                        window.location.href='cadastro2.html';
+                    });
+                
+
+
+                } else {
+                    
+                    // alert("entro no else")
+                    console.log('Erro de cadastro!');
+                    
+                }
+            });
+
+            return cadastrar2();
+            return false;
+            
+        }
+
+        
+
+        function cadastrar2(){
+
+            var formulario = new URLSearchParams(new FormData(form_cadastro));
+            fetch("/usuarios/cadastrar2", {
+                method: "POST",
+                body: formulario
+                
+            }).then(function (response) {
+
+                
+                
+                if (response.ok) {
+                    response.json().then(json => {
+
+                        // alert("entro no if2")
+                        sessionStorage.numeroCartao_meuapp = json.numeroCartao;
+                        sessionStorage.digitoCartao_meuapp = json.digitoCartao;
+
+                    });
+
+                } else {
+                    
+                    alert("entro no else2")
+                    console.log('Erro de cadastro!');
+                    
+                }
+            });
+
+            return false;
+        }
+    </script>
